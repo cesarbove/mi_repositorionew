@@ -1,0 +1,50 @@
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imagen {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.5s;
+}
+
+.overlay p {
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imagen:hover .overlay {
+    opacity: 1;
+}
+
+.imagen:hover:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
